@@ -2,8 +2,7 @@
 
 > This is a fork of project archived by microsoft.
 
-[![Build Status](https://travis-ci.org/Microsoft/ApplicationInsights-PHP.svg?branch=master)](https://travis-ci.org/Microsoft/ApplicationInsights-PHP) 
-[![Packagist Pre Release](https://img.shields.io/packagist/vpre/microsoft/application-insights.svg)](https://packagist.org/packages/microsoft/application-insights)
+[![Tests](https://github.com/app-insights-php/applicationInsights-php/actions/workflows/test.yml/badge.svg?branch=1.x)](https://github.com/app-insights-php/applicationInsights-php/actions/workflows/test.yml)
 
 This project extends the Application Insights API surface to support PHP.
 [Application
