@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-04-15
+## [0.4.6] - 2022-04-15
 
 ### Changed
 - [53ab02](https://github.com/app-insights-php/applicationInsights-php/commit/53ab0201679529c060f98a34c17ecaea2720d620) - **Install tools** - [@norberttech](https://github.com/norberttech)
