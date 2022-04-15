@@ -1,14 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 namespace ApplicationInsights\Tests;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * Contains tests for Telemetry_Context class
+ * Contains tests for Telemetry_Context class.
  */
 class Telemetry_Context_Test extends TestCase
 {
-    public function testInstrumentationKey()
+    public function testInstrumentationKey() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $instrumentationKey = Utils::getTestInstrumentationKey();
@@ -16,7 +16,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($instrumentationKey, $telemetryContext->getInstrumentationKey());
     }
 
-    public function testDeviceContext()
+    public function testDeviceContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getDeviceContext();
@@ -26,7 +26,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleDeviceContext());
     }
 
-    public function testCloudContext()
+    public function testCloudContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getCloudContext();
@@ -36,7 +36,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleCloudContext());
     }
 
-    public function testApplicationContext()
+    public function testApplicationContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getApplicationContext();
@@ -46,7 +46,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleApplicationContext());
     }
 
-    public function testUserContext()
+    public function testUserContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getUserContext();
@@ -61,7 +61,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleUserContext());
     }
 
-    public function testLocationContext()
+    public function testLocationContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getLocationContext();
@@ -71,7 +71,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleLocationContext());
     }
 
-    public function testOperationContext()
+    public function testOperationContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getOperationContext();
@@ -81,7 +81,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleOperationContext());
     }
 
-    public function testSessionContext()
+    public function testSessionContext() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $context = $telemetryContext->getSessionContext();
@@ -96,7 +96,7 @@ class Telemetry_Context_Test extends TestCase
         $this->assertEquals($context, Utils::getSampleSessionContext());
     }
 
-    public function testProperties()
+    public function testProperties() : void
     {
         $telemetryContext = new \ApplicationInsights\Telemetry_Context();
         $properties = $telemetryContext->getProperties();

@@ -1,23 +1,23 @@
-<?php
+<?php declare(strict_types=1);
 namespace ApplicationInsights\Channel\Contracts;
 
 /**
-* Interface class for XXXXX_Data.
-*/
+ * Interface class for XXXXX_Data.
+ */
 interface Data_Interface
 {
     /**
-    * Gets the envelopeTypeName field.
-    */
+     * Gets the envelopeTypeName field.
+     */
     public function getEnvelopeTypeName();
 
     /**
-    * Gets the dataTypeName field.
-    */
+     * Gets the dataTypeName field.
+     */
     public function getDataTypeName();
 
     /**
-    * JSON serialization for this class.
-    */
+     * JSON serialization for this class.
+     */
     public function jsonSerialize();
 }

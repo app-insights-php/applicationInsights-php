@@ -1,31 +1,34 @@
-<?php
+<?php declare(strict_types=1);
 namespace ApplicationInsights\Tests;
 
 /**
- * Contains utilities for tests
+ * Contains utilities for tests.
  */
 class Utils
 {
     /**
      * A single place for managing the instrumentation key used in the tests.
+     *
      * @return string (Guid)
      */
     public static function getTestInstrumentationKey()
     {
         return '11111111-1111-1111-1111-111111111111';
     }
-    
+
     /**
      * Controls whether the tests should send data to the server.
+     *
      * @return bool
      */
     public static function sendDataToServer()
     {
         return false;
     }
-    
+
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\Device
+     * Gets a sample ApplicationInsights\Channel\Contracts\Device.
+     *
      * @return \ApplicationInsights\Channel\Contracts\Device
      */
     public static function getSampleDeviceContext()
@@ -37,11 +40,13 @@ class Utils
         $context->setOemName('my_device_oem_name');
         $context->setOsVersion('Windows 8');
         $context->setType('PC');
+
         return $context;
     }
-    
+
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\Cloud
+     * Gets a sample ApplicationInsights\Channel\Contracts\Cloud.
+     *
      * @return \ApplicationInsights\Channel\Contracts\Cloud
      */
     public static function getSampleCloudContext()
@@ -49,22 +54,26 @@ class Utils
         $context = new \ApplicationInsights\Channel\Contracts\Cloud();
         $context->setRole('my_role_name');
         $context->setRoleInstance('my_role_instance');
+
         return $context;
     }
 
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\Application
+     * Gets a sample ApplicationInsights\Channel\Contracts\Application.
+     *
      * @return \ApplicationInsights\Channel\Contracts\Application
      */
     public static function getSampleApplicationContext()
     {
         $context = new \ApplicationInsights\Channel\Contracts\Application();
         $context->setVer('1.0.0.0');
+
         return $context;
     }
-    
+
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\User
+     * Gets a sample ApplicationInsights\Channel\Contracts\User.
+     *
      * @return \ApplicationInsights\Channel\Contracts\User
      */
     public static function getSampleUserContext()
@@ -72,22 +81,26 @@ class Utils
         $context = new \ApplicationInsights\Channel\Contracts\User();
         $context->setId('my_user_id');
         $context->setAccountId('my_account_id');
+
         return $context;
     }
-    
+
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\Location
+     * Gets a sample ApplicationInsights\Channel\Contracts\Location.
+     *
      * @return \ApplicationInsights\Channel\Contracts\Location
      */
     public static function getSampleLocationContext()
     {
         $context = new \ApplicationInsights\Channel\Contracts\Location();
-        $context->setIp("127.0.0.0");
+        $context->setIp('127.0.0.0');
+
         return $context;
     }
-    
+
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\Operation
+     * Gets a sample ApplicationInsights\Channel\Contracts\Operation.
+     *
      * @return \ApplicationInsights\Channel\Contracts\Operation
      */
     public static function getSampleOperationContext()
@@ -96,11 +109,13 @@ class Utils
         $context->setId('my_operation_id');
         $context->setName('my_operation_name');
         $context->setParentId('my_operation_parent_id');
+
         return $context;
     }
-    
+
     /**
-     * Gets a sample ApplicationInsights\Channel\Contracts\Session
+     * Gets a sample ApplicationInsights\Channel\Contracts\Session.
+     *
      * @return \ApplicationInsights\Channel\Contracts\Session
      */
     public static function getSampleSessionContext()
@@ -108,73 +123,74 @@ class Utils
         $context = new \ApplicationInsights\Channel\Contracts\Session();
         $context->setId('my_session_id');
         $context->setIsFirst(false);
+
         return $context;
     }
-    
+
     /**
      * Gets a sample custom property array.
+     *
      * @return array
      */
     public static function getSampleCustomProperties()
     {
         return ['MyCustomProperty' => 42, 'MyCustomProperty2' => 'test'];
     }
-    
+
     /**
-     * Used for testing exception related code
+     * Used for testing exception related code.
      */
-    public static function throwNestedException($depth = 0)
+    public static function throwNestedException($depth = 0) : void
     {
-        if ($depth <= 0)
-        {
-            throw new \Exception("testException");
+        if ($depth <= 0) {
+            throw new \Exception('testException');
         }
-        
-        Utils::throwNestedException($depth - 1);
+
+        self::throwNestedException($depth - 1);
     }
-    
+
     /**
-     * Used for testing error related code
+     * Used for testing error related code.
      */
-    public static function throwError()
+    public static function throwError() : void
     {
-        eval('sdklafjha asdlkja asdaksd al');
+        throw new \Error("some error");
     }
 
     /**
      * Creates user cookie for testing.
      */
-    public static function setUserCookie($userId = NULL)
+    public static function setUserCookie($userId = null) : void
     {
-        $_COOKIE['ai_user'] = $userId == NULL ? \ApplicationInsights\Channel\Contracts\Utils::returnGuid() : $userId;
+        $_COOKIE['ai_user'] = $userId == null ? \ApplicationInsights\Channel\Contracts\Utils::returnGuid() : $userId;
     }
-    
+
     /**
      * Clears the user cookie.
      */
-    public static function clearUserCookie()
+    public static function clearUserCookie() : void
     {
-        $_COOKIE['ai_user'] = NULL;
+        $_COOKIE['ai_user'] = null;
     }
-    
+
     /**
      * Creates session cookie for testing.
      */
-    public static function setSessionCookie($sessionId = NULL, $sessionCreatedDate = NULL, $lastRenewedDate = NULL)
+    public static function setSessionCookie($sessionId = null, $sessionCreatedDate = null, $lastRenewedDate = null) : void
     {
-        $sessionId =  $sessionId == NULL ? \ApplicationInsights\Channel\Contracts\Utils::returnGuid() : $sessionId;
-        
-        $sessionCreatedDate == NULL ? $sessionCreatedDate = time() : $sessionCreatedDate;
-        $lastRenewedDate == NULL ? $lastRenewedDate = time() : $lastRenewedDate;
-        
-        $_COOKIE['ai_session'] = $sessionId.'|'.\ApplicationInsights\Channel\Contracts\Utils::returnISOStringForTime($sessionCreatedDate).'|'.\ApplicationInsights\Channel\Contracts\Utils::returnISOStringForTime($lastRenewedDate);
+        $sessionId =  $sessionId == null ? \ApplicationInsights\Channel\Contracts\Utils::returnGuid() : $sessionId;
+
+        $sessionCreatedDate == null ? $sessionCreatedDate = \time() : $sessionCreatedDate;
+        $lastRenewedDate == null ? $lastRenewedDate = \time() : $lastRenewedDate;
+
+        $_COOKIE['ai_session'] = $sessionId . '|' . \ApplicationInsights\Channel\Contracts\Utils::returnISOStringForTime($sessionCreatedDate) . '|' . \ApplicationInsights\Channel\Contracts\Utils::returnISOStringForTime($lastRenewedDate);
     }
-    
+
     /**
      * Clears the user cookie.
      */
-    public static function clearSessionCookie()
+    public static function clearSessionCookie() : void
     {
-        $_COOKIE['ai_session'] = NULL;
+        $_COOKIE['ai_session'] = null;
     }
 }

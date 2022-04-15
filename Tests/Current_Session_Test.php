@@ -1,26 +1,28 @@
-<?php
+<?php declare(strict_types=1);
 namespace ApplicationInsights\Tests;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * Contains tests for Current_Session class
+ * Contains tests for Current_Session class.
  */
 class Current_Session_Test extends TestCase
 {
     private $sessionId;
+
     private $sessionCreatedTime;
+
     private $sessionLastRenewedTime;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->sessionId = \ApplicationInsights\Channel\Contracts\Utils::returnGuid();
-        $this->sessionCreatedTime = time();
-        $this->sessionLastRenewedTime = time() - 10000;
+        $this->sessionCreatedTime = \time();
+        $this->sessionLastRenewedTime = \time() - 10000;
         Utils::setSessionCookie($this->sessionId, $this->sessionCreatedTime, $this->sessionLastRenewedTime);
     }
 
-    protected function tearDown()
+    protected function tearDown() : void
     {
         Utils::clearSessionCookie();
     }
@@ -28,7 +30,7 @@ class Current_Session_Test extends TestCase
     /**
      * Verifies the object is constructed properly.
      */
-    public function testConstructor()
+    public function testConstructor() : void
     {
         $currentSession = new \ApplicationInsights\Current_Session();
 
@@ -40,13 +42,13 @@ class Current_Session_Test extends TestCase
     /**
      * Verifies the object is constructed properly.
      */
-    public function testConstructorWithNoCookie()
+    public function testConstructorWithNoCookie() : void
     {
         Utils::clearSessionCookie();
         $currentSession = new \ApplicationInsights\Current_Session();
 
-        $this->assertEquals($currentSession->id, NULL);
-        $this->assertEquals($currentSession->sessionCreated, NULL);
-        $this->assertEquals($currentSession->sessionLastRenewed, NULL);
+        $this->assertEquals($currentSession->id, null);
+        $this->assertEquals($currentSession->sessionCreated, null);
+        $this->assertEquals($currentSession->sessionLastRenewed, null);
     }
 }

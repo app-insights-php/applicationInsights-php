@@ -1,11 +1,16 @@
-<?php 
-namespace ApplicationInsights\Channel\Contracts; 
+<?php declare(strict_types=1);
 
-abstract class Message_Severity_Level 
-{ 
-	const VERBOSE = Severity_Level::Verbose; 
-	const INFORMATION = Severity_Level::Information; 
-	const WARNING = Severity_Level::Warning; 
-	const ERROR = Severity_Level::Error; 
-	const CRITICAL = Severity_Level::Critical; 
-} 
+namespace ApplicationInsights\Channel\Contracts;
+
+abstract class Message_Severity_Level
+{
+    public const VERBOSE = Severity_Level::Verbose;
+
+    public const INFORMATION = Severity_Level::Information;
+
+    public const WARNING = Severity_Level::Warning;
+
+    public const ERROR = Severity_Level::Error;
+
+    public const CRITICAL = Severity_Level::Critical;
+}
