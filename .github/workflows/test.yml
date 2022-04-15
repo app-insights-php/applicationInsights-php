@@ -51,6 +51,10 @@ jobs:
           restore-keys: |
             php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-
 
+      - name: "Install tools"
+        working-directory: "tools"
+        run: "composer install"
+
       - name: "Install lowest dependencies"
         if: ${{ matrix.dependencies == 'lowest' }}
         run: "composer update --prefer-lowest --no-interaction --no-progress --no-suggest"
