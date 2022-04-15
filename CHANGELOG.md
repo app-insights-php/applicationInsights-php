@@ -5,6 +5,7 @@
 - [ae8c04](https://github.com/app-insights-php/applicationInsights-php/commit/ae8c0494fcf19a23c1a292f51a1629ebf2413f90) - **Adjusted to latest php versions** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
+- [5a1a1d](https://github.com/app-insights-php/applicationInsights-php/commit/5a1a1d6fdb4ac11cf8e2b7ef4ba8852b8626c1f0) - **README.md** - [@norberttech](https://github.com/norberttech)
 - [#67](https://github.com/microsoft/ApplicationInsights-PHP/pull/67) - **README.md** - [@mattmccleary](https://github.com/mattmccleary)
 - [e35ec6](https://github.com/app-insights-php/applicationInsights-php/commit/e35ec61a9f370ec5b97c79cd20cab73628222e7c) - **to 0.4.6** - [@sergkanz@microsoft.com](#)
 
