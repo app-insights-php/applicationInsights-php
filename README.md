@@ -29,13 +29,13 @@ We've published a package you can find on [Packagist](https://packagist.org/pack
 Once you've setup your project to use Composer, just add a reference to our package with whichever version you'd like to use to your composer.json file.
 
 ```json
-require: "microsoft/application-insights": "*"
+require: "app-insights-php/application-insights": "*"
 ```
 
 Or you can use the composer command to automatically add the package to your composer.json file.
 
 ```json
-composer require microsoft/application-insights
+composer require app-insights-php/application-insights
 ```
 
 Make sure you add the require statement to pull in the library:

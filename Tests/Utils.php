@@ -154,7 +154,7 @@ class Utils
      */
     public static function throwError() : void
     {
-        throw new \Error("some error");
+        throw new \Error('some error');
     }
 
     /**

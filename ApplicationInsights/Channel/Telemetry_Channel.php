@@ -151,8 +151,7 @@ class Telemetry_Channel
         Contracts\Data_Interface $data,
         \ApplicationInsights\Telemetry_Context $telemetryContext,
         $startTime = null
-    ) : void
-    {
+    ) : void {
         // If no data or context provided, we just return to not cause upstream issues as a result of telemetry
         if ($data == null || $telemetryContext == null) {
             return;

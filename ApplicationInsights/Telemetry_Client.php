@@ -304,8 +304,7 @@ class Telemetry_Client
         $isSuccessful = true,
         $resultCode = null,
         $properties = null
-    ) : void
-    {
+    ) : void {
         $data = new Channel\Contracts\Dependency_Data();
         $data->setName($name);
         $data->setType($type);
