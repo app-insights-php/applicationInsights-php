@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-08-09
+
+### Updated
+- [33afb4](https://github.com/app-insights-php/applicationInsights-php/commit/33afb44b495f17806100bd0cc11c5f34ca18a72f) - **composer.json** - [@norberttech](https://github.com/norberttech)
+
 ## [0.4.6] - 2022-04-15
 
 ### Changed
