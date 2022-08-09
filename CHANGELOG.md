@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-08-09
+## [0.4.8] - 2022-08-09
 
 ### Updated
 - [a19871](https://github.com/app-insights-php/applicationInsights-php/commit/a1987178d53ebc63ebd43d2e39743570c860d927) - **dependencies** - [@norberttech](https://github.com/norberttech)
