@@ -1,3 +1,8 @@
+## [Unreleased] - 2023-03-28
+
+### Updated
+- [bccdde](https://github.com/app-insights-php/applicationInsights-php/commit/bccdde77375a60ab7e5ee5063a6bcb9a2785b4a6) - **php version to php ~8.1||~8.2** - [@norberttech](https://github.com/norberttech)
+
 ## [0.4.8] - 2022-08-09
 
 ### Updated
