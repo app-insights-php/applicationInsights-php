@@ -1,3 +1,8 @@
+## [Unreleased] - 2023-03-29
+
+### Updated
+- [304737](https://github.com/app-insights-php/applicationInsights-php/commit/304737bc993b66f814c50b15953481994232bb43) - **composer and workflows** - [@norberttech](https://github.com/norberttech)
+
 ## [0.5.0] - 2023-03-28
 
 ### Updated
