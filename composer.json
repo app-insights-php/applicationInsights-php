@@ -23,12 +23,15 @@
         "test": [
             "tools/vendor/bin/phpunit"
         ],
-        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix"
-    },
-    "post-install-cmd": [
-        "@tools:install"
-    ],
-    "post-update-cmd": [
-        "@tools:install"
-    ]
+        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
+        "post-install-cmd": [
+            "@tools:install"
+        ],
+        "post-update-cmd": [
+            "@tools:install"
+        ],
+        "tools:install": [
+            "composer install --working-dir=./tools"
+        ]
+    }
 }
