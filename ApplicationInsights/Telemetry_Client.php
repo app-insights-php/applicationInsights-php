@@ -160,7 +160,7 @@ class Telemetry_Client
      *
      * @param string $name a friendly name of the request
      * @param string $url the url of the request
-     * @param int $startTime the timestamp at which the request started
+     * @param float|int $startTime the timestamp at which the request started
      * @param int $durationInMilliseconds the duration, in milliseconds, of the request
      * @param int $httpResponseCode the response code of the request
      * @param bool $isSuccessful whether or not the request was successful
@@ -177,7 +177,7 @@ class Telemetry_Client
      *
      * @param string $name a friendly name of the request
      * @param string $url the url of the request
-     * @param int $startTime the timestamp at which the request started
+     * @param float|int $startTime the timestamp at which the request started
      *
      * @return \ApplicationInsights\Channel\Contracts\Request_Data an initialized Request_Data, which can be sent by using @see endRequest
      */
@@ -289,7 +289,7 @@ class Telemetry_Client
      * @param string $name name of the dependency
      * @param string $type the Dependency type of value being sent
      * @param string $commandName command/Method of the dependency
-     * @param int $startTime the timestamp at which the request started
+     * @param float|int $startTime the timestamp at which the request started
      * @param int $durationInMilliseconds the duration, in milliseconds, of the request
      * @param bool $isSuccessful whether or not the request was successful
      * @param int $resultCode the result code of the request
