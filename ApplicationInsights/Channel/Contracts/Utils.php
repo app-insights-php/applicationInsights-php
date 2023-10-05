@@ -80,17 +80,18 @@ class Utils
     /**
      * Returns the proper ISO string for Application Insights service to accept.
      *
-     * @param float|int|null $time
+     * @param null|float|int $time
      *
      * @return string
      */
     public static function returnISOStringForTime($time = null)
     {
         if ($time == null) {
-            $time = microtime(true);
+            $time = \microtime(true);
         }
 
-        $datetime = \DateTime::createFromFormat('U.u', number_format($time, 6, '.', ''));
+        $datetime = \DateTime::createFromFormat('U.u', \number_format($time, 6, '.', ''));
+
         return $datetime->format("Y-m-d\TH:i:s.u") . 'Z';
     }
 
