@@ -80,17 +80,19 @@ class Utils
     /**
      * Returns the proper ISO string for Application Insights service to accept.
      *
-     * @param mixed $time
+     * @param null|float|int $time
      *
      * @return string
      */
     public static function returnISOStringForTime($time = null)
     {
         if ($time == null) {
-            return \gmdate('c') . 'Z';
+            $time = \microtime(true);
         }
 
-        return \gmdate('c', $time) . 'Z';
+        $datetime = \DateTime::createFromFormat('U.u', \number_format($time, 6, '.', ''));
+
+        return $datetime->format("Y-m-d\TH:i:s.u") . 'Z';
     }
 
     /**
